@@ -1,0 +1,25 @@
+version: '3.2'
+services:
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    command: "node ./dist/app.js"
+    container_name: backend
+    ports:
+      - "8845:3210"
+    expose:
+      - "3210"
+    environment:
+      - PORT=3210
+      - MONGO_URL=mongodb+srv://[username]:[password]@cluster0.itgrvrl.mongodb.net/testdb?retryWrites=true&w=majority
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    command: "npm run preview"
+    container_name: frontend
+    ports:
+      - "8846:8080"
+    expose:
+      - "8080"
