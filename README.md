@@ -16,7 +16,7 @@ During recent Docker practice sessions, I successfully completed the following t
 
   ```
   docker run -p 8013:8080 image-name
-                ^
+                    ^
   the left port is custom port we define to run the application
   the right port is the actual port which is configured in the web app and exposed in Dockerfile
   ```
@@ -27,6 +27,16 @@ During recent Docker practice sessions, I successfully completed the following t
 
   ```
   docker-compose up --build
+  ```
+
+- ⚙️ Executing Mongodb commands in a mongo image based container using bash
+
+  ```
+  docker exec -it <mongo-container id or name> bash
+
+  # then
+
+  mongosh <DB url>
   ```
 
 These experiences have enhanced my proficiency in Docker and containerization practices. 🌟

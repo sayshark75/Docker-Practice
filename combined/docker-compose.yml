@@ -23,3 +23,8 @@ services:
       - "8846:8080"
     expose:
       - "8080"
+  database:
+    image: mongo:latest
+    container_name: database
+    ports:
+      - '27017:27017'
